@@ -7,11 +7,16 @@ module.exports = {
     getWildPokemon: (req, res) => {
         
         const pokemonArray = [];
-        //Math.floor
+        //Math.random randomly generates a number from 0.000 - .999
+        //Multiply it by the top range you want(in this case, 151), and
+        //place that operation in Math.ceil to give you a random number
+        //range from 1 - 151
         const rand1 = Math.ceil(Math.random() * 151);
         const rand2 = Math.ceil(Math.random() * 151);
         const rand3 = Math.ceil(Math.random() * 151);
 
+        //You can perform multiple axios requests by placing them in the .then function
+        //of the previous request.
         axios.get(`https://pokeapi.co/api/v2/pokemon/${rand1}`)
         .then(response => {
             pokemonArray.push(response.data);

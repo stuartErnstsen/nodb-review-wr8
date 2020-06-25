@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+//Grass is responsible for displaying wildPokemon sent from Finder.js. It also invokes
+//the catch function, creating a req.body and passing it as an argument to catchFn.
 class Grass extends Component {
     handleCatch = () => {
         const {pokemon} = this.props;

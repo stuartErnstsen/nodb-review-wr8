@@ -34,6 +34,9 @@ class App extends Component {
     .catch(err => console.log(err));
   }
 
+  //This method will send a pokemon object to the server to be added to our API. To see
+  //where this connects, view catchPokemon in server/pokemonCtrl.js, and to see where it
+  //is invoked, visit Grass.js(referred to as this.props.catchFn)
   catchPokemon(pokemon){
     axios.post('/api/caught-pokemon', {pokemon: pokemon})
     .then(res => {
@@ -42,6 +45,10 @@ class App extends Component {
     .catch(err => console.log(err))
   }
 
+  //This method will update the name of a caughtPokemon. It takes id and newName as arguments,
+  //passing them as a parameter(id) and a body(newName placed in the body obj on line 53). To see
+  //where this connects, view editName in server/pokemonCtrl.js, and to see where it is invoked,
+  //view Pokemon.js(referred to as nameFn).
   editName = (id, newName) => {
     let body = {name: newName};
 
@@ -52,6 +59,9 @@ class App extends Component {
     .catch(err => console.log(err));
   }
 
+  //This method will remove a pokemon from our API. It takes an id to use as a parameter of our
+  //axios request. To see where this connects, view releasePokemon in pokemonCtrl.js, and to see
+  //where it is invoked, visit Pokemon.js(referred to as releaseFn)
   releasePokemon = (id) => {
     axios.delete(`/api/caught-pokemon/${id}`)
     .then(res => {

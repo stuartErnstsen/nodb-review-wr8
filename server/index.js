@@ -6,6 +6,8 @@
 //   app.listen(4444, () => console.log(`Server running on 4444`))
 
 const express = require('express');
+//When using controllers, they need to be required to the main server file so that you can 
+//access their handler functions.
 const grassCtrl = require('./controllers/grassCtrl');
 const pokeCtrl = require('./controllers/pokemonCtrl');
 const app = express();
