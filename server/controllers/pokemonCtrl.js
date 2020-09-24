@@ -1,3 +1,4 @@
+//instructor code
 const caughtPokemon = [];
 let id = 1;
 
