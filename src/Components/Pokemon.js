@@ -24,8 +24,7 @@ class Pokemon extends Component {
     //is passed in to be used as params in our axios request(found in App.js editName function),
     //and the nameInput is passed in to be used as the req.body for our editName function.
     handleEdit = (id) => {
-        this.props.nameFn(id, this.state.nameInput);
-        this.handleToggle();
+        //code here
     }
 
     render(){

@@ -4,14 +4,7 @@ import React, {Component} from 'react';
 //the catch function, creating a req.body and passing it as an argument to catchFn.
 class Grass extends Component {
     handleCatch = () => {
-        const {pokemon} = this.props;
-        let newPokemon = {
-            name: pokemon.name,
-            img: pokemon.sprites.front_default
-        }
-
-        this.props.catchFn(newPokemon);
-        this.props.refreshFn();
+        //code here
     }
 
     render(){
