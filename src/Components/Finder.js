@@ -20,6 +20,11 @@ class Finder extends Component {
     //found in server/grassCtrl.js
     getWildPokemon = () => {
         //code here
+        axios.get('/api/wild-pokemon')
+            .then(res => {
+                this.setState({wildPokemon: res.data})
+            })
+            .catch(err => console.log(err));
     }
 
     render(){
@@ -32,6 +37,7 @@ class Finder extends Component {
                 catchFn={this.props.catchFn}
                 refreshFn={this.getWildPokemon}/>
         ))
+        console.log(this.state.wildPokemon)
         return (
             <div className='poke-flex'>
                 {mappedPokemon}
