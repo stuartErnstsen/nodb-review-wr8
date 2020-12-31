@@ -19,11 +19,7 @@ class Finder extends Component {
     //This method will get the wildPokemon. To see where this connects, view the handler function
     //found in server/grassCtrl.js
     getWildPokemon = () => {
-        axios.get('/api/wild-pokemon')
-        .then(res => {
-            this.setState({wildPokemon: res.data})
-        })
-        .catch(err => console.log(err))
+        //code here
     }
 
     render(){

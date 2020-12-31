@@ -19,15 +19,6 @@ class Pokemon extends Component {
         this.setState({isEditing: !this.state.isEditing})
     }
 
-    //This method is used so that we can use the editName function passed from props
-    //as well as the toggle function in the same event. The id of the displayed pokemon
-    //is passed in to be used as params in our axios request(found in App.js editName function),
-    //and the nameInput is passed in to be used as the req.body for our editName function.
-    handleEdit = (id) => {
-        this.props.nameFn(id, this.state.nameInput);
-        this.handleToggle();
-    }
-
     render(){
         return (
             <div>
@@ -38,7 +29,7 @@ class Pokemon extends Component {
                         <input 
                             value={this.state.nameInput}
                             onChange={e => this.handleInput(e.target.value)}/>
-                        <button onClick={() => this.handleEdit(this.props.pokemon.id)}>Submit</button>
+                        <button>Submit</button>
                     </div>
                 )
                 : (
@@ -47,7 +38,7 @@ class Pokemon extends Component {
                         <button onClick={this.handleToggle}>Edit Name</button>
                     </div>
                 )}
-                <button onClick={() => this.props.releaseFn(this.props.pokemon.id)}>Release</button>
+                <button>Release</button>
             </div>
         )
     }
